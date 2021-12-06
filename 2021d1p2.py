@@ -6,8 +6,6 @@ data = open(sys.argv[-1],"r").read().split("\n")
 
 print(data)
 
-data = data[:-1]
-
 
 sums = []
 

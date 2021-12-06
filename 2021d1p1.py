@@ -2,7 +2,6 @@
 
 data = open("2021d1.txt","r").read().split("\n")
 
-data = data[:-1]
 
 
 
