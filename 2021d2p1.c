@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
 int calculate(int *data,char *fc, int len){
     int dx = 0;
@@ -7,13 +7,13 @@ int calculate(int *data,char *fc, int len){
     for(int i=0; i<len; i++){
         switch (fc[i])
         {
-        case "f":
+        case 102:
             dx += data[i];
             break;
-        case "d":
+        case 100:
             dy += data[i];
             break;
-        case "u":
+        case 117:
             dy -= data[i];
             break;
         
@@ -34,15 +34,19 @@ int main(int argc, char **argv){
     int *data;
     data = malloc(len*sizeof(int));
 
+    char *fc;
+    data = malloc(len*sizeof(char));
     for (int i = 0; i < len; i++)
     {
-        char *ptr = strtok(," ");
+        char fs;
         int x;
         fgets(buf, 255, (FILE*)f);
+        fs = buf[0];
         x = atoi(("%s\n",buf));
         data[i] = x;
+        fc[i] = fs;
     }
-    printf("%i\n",calculate(data, len));
+    printf("%i\n",calculate(data, fc, len));
     
     
     fclose(f);
