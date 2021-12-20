@@ -2,8 +2,8 @@
 #include <stdlib.h>
 
 
-int* step(int *data){
-    int ov = data[0];
+long int* step(long int *data){
+    long int ov = data[0];
     data[0] = data[1];
     data[1] = data[2];
     data[2] = data[3];
@@ -18,11 +18,11 @@ int* step(int *data){
 }
 
 
-int calculate(int *data){
-    for(int i=0; i<80; i++){
+long int calculate(long int *data){
+    for(long int i=0; i<256; i++){
         data = step(data);
     }
-    int out = data[0]+data[1]+data[2]+data[3]+data[4]+data[5]+data[6]+data[7]+data[8];
+    long int out = data[0]+data[1]+data[2]+data[3]+data[4]+data[5]+data[6]+data[7]+data[8];
     return out;
 }
 
@@ -35,9 +35,9 @@ int main(int argc, char **argv){
 
     int len = 9;
 
-    int *data;
+    long int *data;
     
-    data = malloc(len*sizeof(int));
+    data = malloc(len*sizeof(long int));
     for (int i = 0; i < len; i++)
     {
         data[i] = 0;
@@ -53,7 +53,7 @@ int main(int argc, char **argv){
         }
     }
     
-    printf("%i\n",calculate(data));
+    printf("%ld\n",calculate(data));
     
     
     fclose(f);
