@@ -1,0 +1,53 @@
+a w1
+
+a w2+3
+
+a w3+8
+
+r w4+5
+
+a w5 + 13
+
+a w6 + 9
+
+a w7 + 6
+
+r w8 + 14
+
+r w9 + 8
+
+a w10 + 2
+
+r w11
+
+r w12 + 5
+
+r w13 + 9
+
+r w14 + 1
+
+
+Constaints:
+
+w1 = w14+1
+
+w2 = w13+6
+
+w3+3 = w4
+
+w5+8 = w12
+
+w6+1 = w9
+
+w7 = w8 + 8
+
+w10+2 = w11
+
+
+Then I just solve for either the largest or the smallest
+
+p1:
+ans: 99691891979938
+
+p2:
+ans:27141191213911
